@@ -17,7 +17,9 @@ export class HistorialComponent implements OnInit {
   error:number;
   contador:number;
   descuento:number;
+  medicamento:string;
   ttpagar:number;
+  dui:string;
   
 
   constructor() { }
@@ -31,11 +33,14 @@ export class HistorialComponent implements OnInit {
     this.precio=0;
     this.error=0;
     this.contador=0;
+    this.dui='';
+    this.medicamento='';
+  
 
   }
   ingresar()
   {
-    if(this.precio>0 && this.nombre!='' && this.descripcion!='' && this.mascota!='' && this.veterinario!=''&& this.visita>0)
+    if(this.precio>0 && this.nombre!='' && this.descripcion!='' && this.mascota!='' && this.veterinario!='' && this.visita>0 && this.dui!='' && this.medicamento!='')
     {
       this.error=0;
         if(this.visita<2)
@@ -54,7 +59,7 @@ export class HistorialComponent implements OnInit {
           this.ttpagar=this.precio-this.descuento;
         }
 
-  this.consulta={"nombre":this.nombre,"mascota": this.mascota,"veterinario":this.veterinario,"descripcion":this.descripcion,"visita":this.visita,"precio":this.precio,"ttpagar":this.ttpagar};
+  this.consulta={"dui":this.dui,"medicamento":this.medicamento,"nombre":this.nombre,"mascota": this.mascota,"veterinario":this.veterinario,"descripcion":this.descripcion,"visita":this.visita,"precio":this.precio,"ttpagar":this.ttpagar};
   this.historial.push(this.consulta);
   this.contador++;
 

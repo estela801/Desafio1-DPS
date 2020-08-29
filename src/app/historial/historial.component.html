@@ -8,68 +8,84 @@
       <strong><h2 class="text-info" style="text-align:center">CONTROL DE PACIENTES</h2></strong>
       <p class="text-info" style="text-align:center">Historial de mascotas atendidas en el día</p>
     
-      <div class="col-6" style="margin:auto">
+      <div class="col-10" style="margin:auto">
  
       <div class="card card-primary">
       <div class="card-header bg-danger text-white">
         <h4 class="card-title">Agregar Consultas</h4></div>
 <div class="card-body">
   <div class="row justify-content-md-center">
-    <div class="col-4">
+    <div class="col-3">
         <div class="form-group">
-        <label class="text-info">Nombre del Dueño:</label>
-        <input type="text" class="form-control" [(ngModel)]="nombre" aria-describedby="emailHelp" >
-      </div>
+            <label class="text-info">DUI del Dueño:</label>
+            <input type="text" class="form-control" [(ngModel)]="dui" maxlength="10" >
+          </div>
       
-      <div class="form-group">
-        <label class="text-info">Descripción de Tratamiento:</label>
-        <input type="text" class="form-control" [(ngModel)]="descripcion">
-      </div>
-
-      </div>
-
-      <div class="col-4">
           <div class="form-group">
-              <label class="text-info">Nombre de la Mascota:</label>
-              <input type="text" class="form-control" [(ngModel)]="mascota">
+              <label class="text-info">Medicamento:</label>
+              <input type="text" class="form-control" [(ngModel)]="medicamento">
             </div>
+
+      </div>
+
+      <div class="col-3">
+          <div class="form-group">
+              <label class="text-info">Nombre del Dueño:</label>
+              <input type="text" class="form-control" [(ngModel)]="nombre" aria-describedby="emailHelp" >
+            </div>
+           
             <div class="form-group">
                 <label class="text-info">Veterinario que le atendió:</label>
                 <input type="text" class="form-control" [(ngModel)]="veterinario">
               </div>
 
-
       </div>
-      <div class="col-4">
+      <div class="col-3">
           <div class="form-group">
-              <label class="text-info">N° de Visita:</label>
-              <input type="number" class="form-control" [(ngModel)]="visita">
+              <label class="text-info">Nombre de la Mascota:</label>
+              <input type="text" class="form-control" [(ngModel)]="mascota">
             </div>
             <div class="form-group">
+                <label class="text-info">N° de Visita:</label>
+                <input type="number" class="form-control" [(ngModel)]="visita">
+              </div>
+           
+          </div>
+
+      
+      <div class="col-3">
+          
+          <div class="form-group">
+              <label class="text-info">Razón de Consulta:</label>
+              <input type="text" class="form-control" [(ngModel)]="descripcion">
+            </div>
+  
+         
+            <div class="form-group">
               <label class="text-info">Precio por consulta:</label>
-              <input type="number" class="form-control" [(ngModel)]="precio">
+              <input type="number" class="form-control" [(ngModel)]="precio" placeholder="$">
             </div>
            
             
         </div>
-
-    
-    </div>
-    
+      
+      </div>
   </div>
   <div class="card-footer" >
       <button type="submit" class="btn btn-outline-info  " (click)="ingresar()" >Registrar Consulta</button>
 
   </div>
-  </div>
+ 
 </div>
 <br>
-<table class="table" style="width:70%; margin:auto;" [hidden]="contador==0" >
+<table class="table" style="width:80%; margin:auto;" [hidden]="contador==0" >
     <thead class="thead-light" >
       <tr>
+        <th scope="col">DUI</th>
         <th scope="col">Dueño</th>
         <th scope="col">Mascota</th>
         <th scope="col">Descripción</th>
+        <th scope="col">Medicamento</th>
         <th scope="col">Veterinario</th>
         <th scope="col">N° Consulta</th>
         <th scope="col">Precio</th>
@@ -78,9 +94,11 @@
     </thead>
     <tbody>
       <tr *ngFor="let tvet of historial">
+          <td>{{tvet.dui}}</td>
         <td>{{tvet.nombre}}</td>
         <td>{{tvet.mascota}}</td>
         <td>{{tvet.descripcion}}</td>
+        <td>{{tvet.medicamento}}</td>
         <td>{{tvet.veterinario}}</td>
         <td>{{tvet.visita}}</td>
         <td>{{tvet.precio}}</td>
