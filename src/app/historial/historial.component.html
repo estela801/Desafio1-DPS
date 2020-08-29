@@ -35,7 +35,7 @@
             </div>
             <div class="form-group">
                 <label class="text-info">Veterinario que le atendió:</label>
-                <input type="number" class="form-control" [(ngModel)]="veterinario">
+                <input type="text" class="form-control" [(ngModel)]="veterinario">
               </div>
 
 
@@ -64,7 +64,7 @@
   </div>
 </div>
 <br>
-<table class="table" style="width:70%; margin:auto;" >
+<table class="table" style="width:70%; margin:auto;" [hidden]="contador==0" >
     <thead class="thead-light" >
       <tr>
         <th scope="col">Dueño</th>
@@ -82,9 +82,9 @@
         <td>{{tvet.mascota}}</td>
         <td>{{tvet.descripcion}}</td>
         <td>{{tvet.veterinario}}</td>
-        <td>{{tvet.consulta}}</td>
+        <td>{{tvet.visita}}</td>
         <td>{{tvet.precio}}</td>
-        <td>{{tvet.pagar}}</td>
+        <td>{{tvet.ttpagar}}</td>
       </tr>
       
     </tbody>
