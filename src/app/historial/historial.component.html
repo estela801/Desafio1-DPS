@@ -1,1 +1,102 @@
-<p>historial works!</p>
+<nav class="navbar navbar-light bg-danger ">
+    <span class="navbar-brand mb-0 h1 text-white">VET DPS</span>
+  </nav>
+  <div class="alert alert-danger" role="alert" [hidden]="error==0">
+    ¡Llene los campos de forma adecuada!
+    </div>
+      <br>  
+      <strong><h2 class="text-info" style="text-align:center">CONTROL DE PACIENTES</h2></strong>
+      <p class="text-info" style="text-align:center">Historial de mascotas atendidas en el día</p>
+    
+      <div class="col-6" style="margin:auto">
+ 
+      <div class="card card-primary">
+      <div class="card-header bg-danger text-white">
+        <h4 class="card-title">Agregar Consultas</h4></div>
+<div class="card-body">
+  <div class="row justify-content-md-center">
+    <div class="col-4">
+        <div class="form-group">
+        <label class="text-info">Nombre del Dueño:</label>
+        <input type="text" class="form-control" [(ngModel)]="nombre" aria-describedby="emailHelp" >
+      </div>
+      
+      <div class="form-group">
+        <label class="text-info">Descripción de Tratamiento:</label>
+        <input type="text" class="form-control" [(ngModel)]="descripcion">
+      </div>
+
+      </div>
+
+      <div class="col-4">
+          <div class="form-group">
+              <label class="text-info">Nombre de la Mascota:</label>
+              <input type="text" class="form-control" [(ngModel)]="mascota">
+            </div>
+            <div class="form-group">
+                <label class="text-info">Veterinario que le atendió:</label>
+                <input type="number" class="form-control" [(ngModel)]="veterinario">
+              </div>
+
+
+      </div>
+      <div class="col-4">
+          <div class="form-group">
+              <label class="text-info">N° de Visita:</label>
+              <input type="number" class="form-control" [(ngModel)]="visita">
+            </div>
+            <div class="form-group">
+              <label class="text-info">Precio por consulta:</label>
+              <input type="number" class="form-control" [(ngModel)]="precio">
+            </div>
+           
+            
+        </div>
+
+    
+    </div>
+    
+  </div>
+  <div class="card-footer" >
+      <button type="submit" class="btn btn-outline-info  " (click)="ingresar()" >Registrar Consulta</button>
+
+  </div>
+  </div>
+</div>
+<br>
+<table class="table" style="width:70%; margin:auto;" >
+    <thead class="thead-light" >
+      <tr>
+        <th scope="col">Dueño</th>
+        <th scope="col">Mascota</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Veterinario</th>
+        <th scope="col">N° Consulta</th>
+        <th scope="col">Precio</th>
+        <th scope="col">TT a pagar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tvet of historial">
+        <td>{{tvet.nombre}}</td>
+        <td>{{tvet.mascota}}</td>
+        <td>{{tvet.descripcion}}</td>
+        <td>{{tvet.veterinario}}</td>
+        <td>{{tvet.consulta}}</td>
+        <td>{{tvet.precio}}</td>
+        <td>{{tvet.pagar}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+
+
+
+
+
+
+
+  
+
+  
