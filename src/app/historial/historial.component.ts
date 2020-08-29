@@ -43,11 +43,8 @@ export class HistorialComponent implements OnInit {
     if(this.precio>0 && this.nombre!='' && this.descripcion!='' && this.mascota!='' && this.veterinario!='' && this.visita>0 && this.dui!='' && this.medicamento!='')
     {
       this.error=0;
-        if(this.visita<2)
-        {
-          this.ttpagar=this.precio;
-
-        } else if(this.visita<=4)
+        
+      if(this.visita == 2)
         {
           this.descuento=this.precio*0.05;
           this.ttpagar=this.precio-this.descuento;
@@ -57,6 +54,11 @@ export class HistorialComponent implements OnInit {
         {
           this.descuento=this.precio*0.10;
           this.ttpagar=this.precio-this.descuento;
+        }
+        else
+        {
+          this.ttpagar=this.precio;
+
         }
 
   this.consulta={"dui":this.dui,"medicamento":this.medicamento,"nombre":this.nombre,"mascota": this.mascota,"veterinario":this.veterinario,"descripcion":this.descripcion,"visita":this.visita,"precio":this.precio,"ttpagar":this.ttpagar};
