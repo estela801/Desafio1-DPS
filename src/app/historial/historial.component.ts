@@ -30,7 +30,7 @@ export class HistorialComponent implements OnInit {
     this.veterinario='';
     this.descripcion='';
     this.visita=0;
-    this.precio=0;
+    this.precio;
     this.error=0;
     this.contador=0;
     this.dui='';
@@ -68,7 +68,7 @@ export class HistorialComponent implements OnInit {
   console.log(this.historial);
   this.contador++;
 
-
+ 
     }
     else
     {
