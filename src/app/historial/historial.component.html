@@ -46,9 +46,13 @@
               <input type="text" class="form-control" [(ngModel)]="mascota">
             </div>
             <div class="form-group">
+              <label class="text-info">Precio por consulta:</label>
+              <input type="number" class="form-control" [(ngModel)]="precio" placeholder="$">
+            </div>
+            <!--div class="form-group">
                 <label class="text-info">N° de Visita:</label>
                 <input type="number" class="form-control" [(ngModel)]="visita">
-              </div>
+              </div-->
            
           </div>
 
@@ -61,10 +65,7 @@
             </div>
   
          
-            <div class="form-group">
-              <label class="text-info">Precio por consulta:</label>
-              <input type="number" class="form-control" [(ngModel)]="precio" placeholder="$">
-            </div>
+          
            
             
         </div>
@@ -84,7 +85,7 @@
         <th scope="col">DUI</th>
         <th scope="col">Dueño</th>
         <th scope="col">Mascota</th>
-        <th scope="col">Descripción</th>
+        <th scope="col">Tratamiento</th>
         <th scope="col">Medicamento</th>
         <th scope="col">Veterinario</th>
         <th scope="col">N° Consulta</th>
